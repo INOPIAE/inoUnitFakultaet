@@ -4,7 +4,7 @@ Imports NUnit.Framework
 
 Namespace inoUnitFakultätTest
 
-    Public Class TestFakulät
+    Public Class TestFakultät
         Dim CF As New ClsFunktion
 
         <SetUp>
@@ -13,7 +13,7 @@ Namespace inoUnitFakultätTest
 
         <Test>
         Public Sub TestFakultaet()
-            Dim Eingabe As Short
+            Dim Eingabe As Long
             Dim Vorgabe As Long
             Dim Ergebnis
 
@@ -24,12 +24,13 @@ Namespace inoUnitFakultätTest
 
             Assert.AreEqual(Vorgabe, Ergebnis)
 
-            Eingabe = 1000
-            Vorgabe = 500500
+            Eingabe = 10000000000
+            Vorgabe = 9223372034707292160
 
             Ergebnis = CF.Fakultaet(Eingabe)
 
             Assert.AreEqual(Vorgabe, Ergebnis)
+
         End Sub
 
     End Class
