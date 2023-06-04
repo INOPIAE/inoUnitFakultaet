@@ -1,5 +1,5 @@
 ﻿Public Class ClsFunktion
-    Public Function Fakultaet() As Short
-        Return Nothing
+    Public Function Fakultaet(Eingabe As Short) As Short
+        Return Eingabe
     End Function
 End Class

@@ -13,10 +13,23 @@ Namespace inoUnitFakultätTest
 
         <Test>
         Public Sub TestFakultaet()
+            Dim Eingabe As Short
+            Dim Vorgabe As Short
             Dim Ergebnis
-            Ergebnis = CF.Fakultaet()
 
-            Assert.AreEqual(0, Ergebnis)
+            Eingabe = 4
+            Vorgabe = 4
+
+            Ergebnis = CF.Fakultaet(Eingabe)
+
+            Assert.AreEqual(Vorgabe, Ergebnis)
+
+            Eingabe = 100
+            Vorgabe = 100
+
+            Ergebnis = CF.Fakultaet(Eingabe)
+
+            Assert.AreEqual(Vorgabe, Ergebnis)
         End Sub
 
     End Class
