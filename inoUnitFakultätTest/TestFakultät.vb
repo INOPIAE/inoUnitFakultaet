@@ -24,12 +24,33 @@ Namespace inoUnitFakultätTest
 
             Assert.AreEqual(Vorgabe, Ergebnis)
 
-            Eingabe = 10000000000
+            Eingabe = 4294967295
             Vorgabe = 9223372034707292160
+
 
             Ergebnis = CF.Fakultaet(Eingabe)
 
             Assert.AreEqual(Vorgabe, Ergebnis)
+
+            'Eingabe 0
+            Eingabe = 0
+            Vorgabe = 0
+
+            Ergebnis = CF.Fakultaet(Eingabe)
+
+            Assert.AreEqual(Vorgabe, Ergebnis)
+
+
+        End Sub
+
+        <Test>
+        Public Sub TestFakultaetFehler()
+            Dim Eingabe As Long
+
+            'Eingabe zu groß
+            Eingabe = 4294967296
+            Dim ex = Assert.Throws(Of OverflowException)(Function() CF.Fakultaet(Eingabe))
+            Assert.AreEqual("Die Eingabe ist größer als 4294967296 und kann nicht verarbeitet werden.", ex.Message)
 
         End Sub
 
